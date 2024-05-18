@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+*{
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+body{
+    background-color: #f1f0f0 !important;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+.link-no-underline {
+    text-decoration: none !important;
+  }
+  
+
+.text-color{
+    color:#000;
+}
+
+.btn {
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #DCDCDC !important;
+  }
+
+  .boxShadow{
+    box-shadow: 9px 15px 29px -5px rgba(0,0,0,0.75);
+  }
+
+  .smallsize{
+    font-size: 15px;
+  }
+
+  .chart-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.chart-wrapper {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; /* Para evitar que a sombra seja cortada */
+  }
+
+  .custom-select{
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right .75rem center / 8px 10px;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .custom-select-sm{
+    height: calc(1.5em + .5rem + 2px);
+    padding-top: .25rem;
+    padding-bottom: .25rem;
+    padding-left: .5rem;
+    font-size: .875rem;
+  }
+
+  .dataTables_info{
+    white-space: nowrap;
+  }
+
+  .dataTables_paginate{
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+  }
+
+.marginRight{
+  margin-right: .25rem !important;
+}
+
+.marginLeft{
+  margin-left: .25rem !important;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
