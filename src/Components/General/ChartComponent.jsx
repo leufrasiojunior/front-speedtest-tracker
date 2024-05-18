@@ -3,7 +3,6 @@ import { Chart } from "react-google-charts";
 import { Card, Container } from "react-bootstrap";
 import moment from "moment-timezone";
 import Loader from "../Spinner";
-import "../../styles/styles.css"; // Import the CSS file
 
 const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
   <>
@@ -31,7 +30,6 @@ const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
                   dataKey === "ping"
                     ? entry[dataKey]
                     : ((entry[dataKey] * 8) / 1000000).toFixed(2);
-                // const annotation = entry.annotation || "";
                 const annotation = parseFloat(value);
                 return [hora, parseFloat(value), annotation];
               }),
@@ -43,8 +41,8 @@ const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
                 textStyle: {
                   bold: true,
                   italic: true,
-                  fontSize: 12, // Reduz o tamanho da fonte
-                  color: "#000", // Altera a cor da fonte para vermelho
+                  fontSize: 12,
+                  color: "#000",
                   auraColor: "none",
                 },
               },
@@ -53,7 +51,7 @@ const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
                 textStyle: { color: "#212529", fontSize: 16 },
               },
 
-              // tooltip: { isHtml: true },
+              tooltip: { isHtml: true },
               backgroundColor: "#fff",
               fontSize: "999px",
               maxValue: 100,

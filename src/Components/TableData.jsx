@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import ModalCustom from "./Modal";
 import { Container, Row } from "react-bootstrap";
 import { saveAs } from "file-saver";
-// import MydModalWithGrid from "../TestModal";
 import Loader from "./Spinner";
 
 function bpsToMbps(bps) {
@@ -17,7 +16,6 @@ const App = () => {
   const [pageSize, setPageSize] = useState(15);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRecord, setSelectedRecord] = useState(null);
-  // const [openModal, setOpenModal] = useState(false);
   const [selectedItems, setSelectedItems] = useState([]);
   const [selectAll, setSelectAll] = useState(false);
   const [id, setId] = useState();
@@ -87,8 +85,6 @@ const App = () => {
 
   const renderPagination = () => {
     const pages = [];
-
-    // Primeiras 3 páginas
     for (let i = 1; i <= Math.min(3, totalPages); i++) {
       pages.push(
         <button
@@ -101,8 +97,6 @@ const App = () => {
         </button>
       );
     }
-
-    // Páginas restantes
     const currentPageIndex = Math.min(
       Math.max(currentPage - 2, 4),
       totalPages - 2
@@ -144,30 +138,20 @@ const App = () => {
     try {
       let exportData;
       if (selectedItems.length > 0) {
-        // Se houver itens selecionados, exporta apenas esses itens
         exportData = data.filter((item) => selectedItems.includes(item.id));
       } else {
-        // Se não houver itens selecionados, solicita todos os dados da tabela à API
         const response = await api.get(`/allresults`);
         exportData = response.data;
       }
-
       let csvContent = "";
-
-      // Adiciona a linha de cabeçalho com os nomes das colunas
       const headerRow = Object.keys(exportData[0]).join(";");
       csvContent += headerRow + "\n";
-
-      // Adiciona os dados
       exportData.forEach((row) => {
         const rowData = Object.values(row).map((value) => {
-          // Converte todos os valores para string
           return JSON.stringify(value);
         });
         csvContent += rowData.join(";") + "\n";
       });
-
-      // Cria e salva o arquivo CSV
       const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
       saveAs(blob, "data.csv");
     } catch (error) {

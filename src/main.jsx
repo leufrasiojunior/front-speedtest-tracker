@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import Home from "./Routes/Home.jsx";
 import Dashboard from "./Routes/Dashboard.jsx";
 import Results from "./Routes/Results.jsx";
 import ErrorPage from "./Routes/ErrorPage.jsx";

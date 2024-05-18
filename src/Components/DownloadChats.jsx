@@ -41,7 +41,7 @@ const DownloadChats = () => {
         .subtract(diferencaUTCMinutos, "minutes")
         .format("YYYY-MM-DDTHH:mm:ss.SSSZ");
 
-      const resposta = await api.get("/dados", {
+      const resposta = await api.get("/data", {
         params: {
           inicio: dataInicioFormatada,
           fim: dataFimFormatada,
@@ -85,7 +85,6 @@ const DownloadChats = () => {
     }
   };
   const handleReset = () => {
-    console.log("Reset");
     setNumResultados(10);
   };
 
