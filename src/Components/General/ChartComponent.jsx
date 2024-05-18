@@ -7,7 +7,6 @@ import "../../styles/styles.css"; // Import the CSS file
 
 const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
   <>
-    {console.log(yAxisLabel)}
     <Card>
       <h5 className="card-header">{title}</h5>
       <Card.Body>
