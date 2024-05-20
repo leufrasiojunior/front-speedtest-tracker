@@ -2,6 +2,7 @@
 
 import Select from "react-select";
 import { Container } from "react-bootstrap";
+import { RiTimeZoneLine } from "react-icons/ri";
 
 const TimezoneSelect = ({
   fusoHorario,
@@ -9,7 +10,9 @@ const TimezoneSelect = ({
   opcoesFusoHorario,
 }) => (
   <Container className="w-25">
-    <label htmlFor="timezone">Fuso Horário:</label>
+    <label htmlFor="timezone">
+      Fuso Horário: <RiTimeZoneLine />
+    </label>
     <Select
       options={opcoesFusoHorario}
       onChange={handleTimezoneChange}

@@ -7,6 +7,7 @@ import DatePickers from "./General/DatePickers";
 import TimezoneSelect from "./General/TimezoneSelect";
 import { LoadMoreButton, ResetButton } from "./General/TopButtons";
 import ChartComponent from "./General/ChartComponent";
+import { BsCalendar } from "react-icons/bs";
 
 const DownloadChats = () => {
   const [dados, setDados] = useState([]);
@@ -101,6 +102,7 @@ const DownloadChats = () => {
         className="d-flex flex-row align-content-between flex-wrap align-items-center justify-content-between p-4 rounded-3"
         style={{ textAlignLast: "center" }}
       >
+        <BsCalendar />
         <DatePickers
           dataInicio={dataInicio}
           dataFim={dataFim}

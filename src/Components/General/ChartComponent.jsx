@@ -3,11 +3,21 @@ import { Chart } from "react-google-charts";
 import { Card, Container } from "react-bootstrap";
 import moment from "moment-timezone";
 import Loader from "../Spinner";
+import { BsDownload, BsUpload, BsClock } from "react-icons/bs";
 
 const ChartComponent = ({ data, fusoHorario, title, dataKey, yAxisLabel }) => (
   <>
     <Card>
-      <h5 className="card-header">{title}</h5>
+      <h5 className="card-header">
+        {dataKey == "download" ? (
+          <BsDownload style={{ marginRight: "5px" }} />
+        ) : dataKey == "upload" ? (
+          <BsUpload style={{ marginRight: "5px" }} />
+        ) : (
+          <BsClock style={{ marginRight: "5px" }} />
+        )}
+        {title}
+      </h5>
       <Card.Body>
         {data.length > 0 ? (
           <Chart

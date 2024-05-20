@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import api from "./api/ApiConnect";
 import Loader from "./Spinner";
-import { BsDownload } from "react-icons/bs";
+import { BsDownload, BsUpload, BsClock } from "react-icons/bs";
 
 function bpsToMbps(bps) {
   return bps / 1000000;
@@ -63,7 +63,10 @@ function Avarages() {
                 }}
                 className="boxShadow"
               >
-                <Card.Header>Upload Médio</Card.Header>
+                <Card.Header>
+                  <BsUpload style={{ marginRight: "5px" }} />
+                  Upload Médio
+                </Card.Header>
                 <Card.Body>
                   <Card.Text>{data.averageUpload.toFixed(2)} Mbps</Card.Text>
                 </Card.Body>
@@ -78,7 +81,10 @@ function Avarages() {
                 }}
                 className="boxShadow"
               >
-                <Card.Header>Ping Médio</Card.Header>
+                <Card.Header>
+                  <BsClock style={{ marginRight: "5px" }} />
+                  Ping Médio
+                </Card.Header>
                 <Card.Body>
                   <Card.Text>
                     {data ? data.averagePing.toFixed(2) : null} Ms
