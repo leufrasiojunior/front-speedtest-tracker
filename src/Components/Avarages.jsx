@@ -5,6 +5,7 @@ import Col from "react-bootstrap/Col";
 import { Card } from "react-bootstrap";
 import api from "./api/ApiConnect";
 import Loader from "./Spinner";
+import { BsDownload } from "react-icons/bs";
 
 function bpsToMbps(bps) {
   return bps / 1000000;
@@ -44,7 +45,10 @@ function Avarages() {
                 }}
                 className="boxShadow"
               >
-                <Card.Header>Download Médio</Card.Header>
+                <Card.Header>
+                  <BsDownload style={{ marginRight: "5px" }} />
+                  Download Médio
+                </Card.Header>
                 <Card.Body>
                   <Card.Text>{data.averageDownload.toFixed(2)} Mbps</Card.Text>
                 </Card.Body>
